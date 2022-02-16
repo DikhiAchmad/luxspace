@@ -44,6 +44,48 @@
     .card:hover .card-shadow {
         @apply shadow-lg;
     }
+
+    ul.breadcrumb {
+        @apply flex flex-row items-center text-lg;
+    }
+
+    ul.breadcrumb li:not(:last-child):after {
+        content: '/';
+        @apply px-4;
+    }
+
+    ul.breadcrumb li:not(:last-child) a {
+        @apply font-light;
+    }
+
+    ul.breadcrumb li:last-child a {
+        @apply font-semibold;
+    } 
+
+    /* slideshow */
+    .slider {
+        @apply flex my-4 flex-col;
+    }
+
+    .slider .thumbnail {
+        @apply w-screen order-last -mx-2 overflow-auto flex pl-3; 
+    }
+
+    .slider .thumbnail .item {
+        @apply bg-gray-100 relative rounded-lg mb-4 cursor-pointer w-27 h-27;
+    } 
+
+    .slider .thumbnail .item:after {
+        content: "";
+        @apply transition duration-200 absolute inset-0 bg-black bg-opacity-0 border-2 border-black border-opacity-0 rounded-lg;
+    } 
+
+    .slider .thumbnail .item.selected:after {
+        content: "";
+        @apply bg-opacity-35 border-opacity-100;
+    } 
+
+
 }
 
 /* @screen sm {
@@ -61,6 +103,18 @@
         transform: translateX(-50%) translateY(-50%);
         background-size: auto;
     }
+
+    .slider {
+        @apply flex-row;
+    }
+    .slider .thumbnail {
+        @apply w-auto order-first block overflow-visible pl-0;
+    }
+
+    .slider .preview {
+        height: 609px;
+        width: 560px;
+    }
 }
 
 @layer utilities {
@@ -76,6 +130,7 @@
 a.cart svg g circle.dot {
     @apply hidden;
 }
+
 a.cart.cart-filled svg g circle.dot {
     @apply block;
 }
