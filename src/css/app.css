@@ -128,6 +128,13 @@
         grid-auto-flow: dense;
         grid-auto-rows: minmax(180px, auto);
     }
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
 }
 
 a.cart svg g circle.dot {

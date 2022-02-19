@@ -22,24 +22,24 @@ function slide(wrapper, items) {
         itemToShow = 4,
         slides = items.getElementsByClassName("card"),
         slidesLength = slides.length,
-        slideSize = items.getElementsByClassName("card") [0].offsetWidth,
+        slideSize = items.getElementsByClassName("card")[0].offsetWidth,
         index = 0,
         allowShift = true;
 
     wrapper.classList.add("loaded");
     items.onmousedown = dragStart;
-    items.addEventListener("touchstart", dragStart);
-    items.addEventListener("touchend", dragEnd);
-    items.addEventListener("touchmove", dragAction);
+    items.addEventListener("touchstart", dragStart());
+    items.addEventListener("touchend", dragEnd());
+    items.addEventListener("touchmove", dragAction());
 
-    items.addEventListener("transitionend", checkIndex);
+    items.addEventListener("transitionend", checkIndex());
 
     function dragStart(e) {
         e = e || window.event;
         e.preventDefault();
         posInitial = items.offsetLeft;
-        if (e.type == "touchStart") {
-            posX1 = e.thouches[0].clientX;
+        if (e.type == "touchstart") {
+            posX1 = e.touches[0].clientX;
         } else {
             posX1 = e.clientX;
             document.onmouseup = dragEnd;
@@ -50,8 +50,8 @@ function slide(wrapper, items) {
     function dragAction(e) {
         e = e || window.event;
         if (e.type == "touchmove") {
-            posX2 = posX1 - e.thouches[0].clientX;
-            posX1 = e.thouches[0].clientX;
+            posX2 = posX1 - e.touches[0].clientX;
+            posX1 = e.touches[0].clientX;
         } else {
             posX2 = posX1 - e.clientX;
             posX1 = e.clientX;
@@ -109,6 +109,6 @@ function slide(wrapper, items) {
 
 if (carouselId) {
     slide(carouselId, carouselItems);
-    window.addEventListener("load", carouselCalculateOffset);
-    window.addEventListener("resize", carouselCalculateOffset);
+    window.addEventListener("load", carouselCalculateOffset());
+    window.addEventListener("resize", carouselCalculateOffset());
 }
