@@ -289,7 +289,7 @@
                 <!-- END: shopping cart -->
 
                 <!-- Start: shipping details -->
-                <div class="w-full md:px-4 md:w-4/12 ">
+                <div class="w-full md:px-4 md:w-4/12 " id="shipping-details">
                     <div class="bg-gray-100 px-4 py-4 md:p-8 md:rounded-3xl">
                         <form action="success.html" class="">
                             <div class="flex flex-start mb-6">
@@ -299,7 +299,7 @@
                             <!-- START: input your name -->
                             <div class="flex flex-col mb-4">
                                 <label for="complete-name" class="text-sm mb-2">Complete Name</label>
-                                <input type="text" id="complete-name"
+                                <input type="text" id="complete-name" data-input
                                     class="border border-gray-200 rounded-lg px-4 py-2 bg-white text-sm focus:border-blue-200 focus:outline-none"
                                     placeholder="input your name" />
                             </div>
@@ -308,7 +308,7 @@
                             <!-- START: input your email -->
                             <div class="flex flex-col mb-4">
                                 <label for="email-address" class="text-sm mb-2">Email Address</label>
-                                <input type="text" id="email-address"
+                                <input type="text" id="email-address" data-input
                                     class="border border-gray-200 rounded-lg px-4 py-2 bg-white text-sm focus:border-blue-200 focus:outline-none"
                                     placeholder="input your email" />
                             </div>
@@ -317,7 +317,7 @@
                             <!-- START: input your address -->
                             <div class="flex flex-col mb-4">
                                 <label for="address" class="text-sm mb-2">Address</label>
-                                <input type="text" id="address"
+                                <input type="text" id="address" data-input
                                     class="border border-gray-200 rounded-lg px-4 py-2 bg-white text-sm focus:border-blue-200 focus:outline-none"
                                     placeholder="input your address" />
                             </div>
@@ -326,7 +326,7 @@
                             <!-- START: input your number -->
                             <div class="flex flex-col mb-4">
                                 <label for="phone-number" class="text-sm mb-2">Phone Number</label>
-                                <input type="tel" id="phone-number"
+                                <input type="tel" id="phone-number" data-input
                                     class="border border-gray-200 rounded-lg px-4 py-2 bg-white text-sm focus:border-blue-200 focus:outline-none"
                                     placeholder="input your number" />
                             </div>
@@ -338,7 +338,7 @@
                                 <div class="flex -mx-2 flex-wrap">
                                     <!-- START: courier 1 -->
                                     <div class="w-6/12 px-2 h-24 mb-4">
-                                        <button type="button"
+                                        <button type="button" data-value="fedex" data-name="courier"
                                             class="h-full border border-gray-200 focus:outline-none focus:border-red-200 flex items-center justify-center rounded-xl bg-white w-full">
                                             <img class="object-contain max-h-full"
                                                 src="./images/content/courier/fedex.jpg" alt="courier fedex">
@@ -347,7 +347,7 @@
                                     <!-- END: courier 1 -->
                                     <!-- START: courier 2 -->
                                     <div class="w-6/12 px-2 h-24 mb-4">
-                                        <button type="button"
+                                        <button type="button" data-value="dhl" data-name="courier"
                                             class="h-full border border-gray-200 focus:outline-none focus:border-red-200 flex items-center justify-center rounded-xl bg-white w-full">
                                             <img class="object-contain max-h-full"
                                                 src="./images/content/courier/dhl.jpg" alt="courier dhl">
@@ -364,7 +364,7 @@
                                 <div class="flex -mx-2 flex-wrap">
                                     <!-- START: PAYMENT 1 -->
                                     <div class="w-6/12 px-2 h-24 mb-4">
-                                        <button type="button"
+                                        <button type="button" data-value="midtrans" data-name="payment"
                                             class="h-full border border-gray-200 focus:outline-none focus:border-red-200 flex items-center justify-center rounded-xl bg-white w-full">
                                             <img class="object-contain max-h-full"
                                                 src="./images/content/payment/midtrans.jpg" alt="midtrans">
@@ -373,7 +373,7 @@
                                     <!-- END: PAYMENT 1 -->
                                     <!-- START: PAYMENT 2 -->
                                     <div class="w-6/12 px-2 h-24 mb-4">
-                                        <button type="button"
+                                        <button type="button" data-value="mastercard" data-name="payment"
                                             class="h-full border border-gray-200 focus:outline-none focus:border-red-200 flex items-center justify-center rounded-xl bg-white w-full">
                                             <img class="object-contain max-h-full"
                                                 src="./images/content/payment/mastercard.jpg" alt="mastercard">
@@ -382,7 +382,7 @@
                                     <!-- END: PAYMENT 2 -->
                                     <!-- START: PAYMENT 3 -->
                                     <div class="w-6/12 px-2 h-24 mb-4">
-                                        <button type="button"
+                                        <button type="button" data-value="bitcoin" data-name="payment"
                                             class="h-full border border-gray-200 focus:outline-none focus:border-red-200 flex items-center justify-center rounded-xl bg-white w-full">
                                             <img class="object-contain max-h-full"
                                                 src="./images/content/payment/bitcoin.jpg" alt="bitcoin">
@@ -391,7 +391,7 @@
                                     <!-- END: PAYMENT 3 -->
                                     <!-- START: PAYMENT 4 -->
                                     <div class="w-6/12 px-2 h-24 mb-4">
-                                        <button type="button"
+                                        <button type="button" data-value="american-express" data-name="payment"
                                             class="h-full border border-gray-200 focus:outline-none focus:border-red-200 flex items-center justify-center rounded-xl bg-white w-full">
                                             <img class="object-contain max-h-full"
                                                 src="./images/content/payment/american-express.jpg"
@@ -404,9 +404,9 @@
                             <!-- END: CHOOSE PAYMENT -->
 
                             <div class="flex flex-col mb-4">
-                                <button type="submit"
-                                    class="bg-gray-300 text-gray-400 focus:bg-red-200 focus:outline-none w-full py-3 rounded-full text-lg focus:text-black transition-all duration-200 px-6">
-                                    add to cart
+                                <button type="submit" disabled
+                                    class="bg-pink-400 text-black font-semibold focus:bg-black focus:outline-none w-full py-3 rounded-full text-lg focus:text-pink-400 transition-all duration-200 px-6">
+                                    Checkout Now
                                 </button>
                             </div>
                         </form>

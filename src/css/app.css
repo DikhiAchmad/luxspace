@@ -128,13 +128,13 @@
         grid-auto-flow: dense;
         grid-auto-rows: minmax(180px, auto);
     }
-    .no-scrollbar::-webkit-scrollbar {
+    /* .no-scrollbar::-webkit-scrollbar {
         display: none;
     }
     .no-scrollbar {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-    }
+        -ms-overflow-style: none; 
+        scrollbar-width: none; 
+    } */
 }
 
 a.cart svg g circle.dot {
@@ -143,4 +143,8 @@ a.cart svg g circle.dot {
 
 a.cart.cart-filled svg g circle.dot {
     @apply block;
+}
+
+button[disabled] {
+    @apply bg-gray-300 hover:bg-gray-300 text-gray-400 hover:text-gray-400 cursor-not-allowed;
 }
